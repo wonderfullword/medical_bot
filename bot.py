@@ -10,6 +10,7 @@ bot=telebot.TeleBot(token)
 def start(message):
     markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
     nos_btn=types.KeyboardButton("Заложен нос")
+    sinusit_btn=types.KeyboardButton("Лечение синуситов")
     prostuda_btn=types.KeyboardButton("Простуда")
     yho_btn=types.KeyboardButton("Болит ухо")
     gorlo_btn=types.KeyboardButton("Болит горло")
@@ -18,7 +19,7 @@ def start(message):
     high_ad_btn= types.KeyboardButton("Высокое артериальное давление")
     pain_btn = types.KeyboardButton("Головная,мышечная,зубная боль")
 
-    markup.add(nos_btn,prostuda_btn, yho_btn, gorlo_btn, kashel_btn, diareya_btn, high_ad_btn, pain_btn)
+    markup.add(nos_btn,sinusit_btn,prostuda_btn, yho_btn, gorlo_btn, kashel_btn, diareya_btn, high_ad_btn, pain_btn)
 
     bot.send_message(message.chat.id, "Привет, {0.first_name}!".format(message.from_user), reply_markup=markup)
 
@@ -56,6 +57,23 @@ def bot_message(message):
                                               "3)Ноксивин(РБ)\n"
                                               "4)Рузана(РБ)\n"
             "__По 1 впрыскиванию 2 раза в сутки.Пользоваться не более 7 дней__")
+            img = open("kviks-akvamaris.jpg", "rb")
+            bot.send_photo(
+                chat_id=message.chat.id,
+                photo=img,
+                caption="Для промывания носа")
+            img.close()
+        elif message.text == "Лечение синуситов":
+            bot.send_message(message.chat.id, "Таблетки Синупрет.Принимать по 2 таблетки 3 раза в день.Запивать большим количеством воды.\n"
+                                              "Таблетки синупрет форте(или экстракт).Принимать по 1 таблетке 3 раза в день.\n"
+                             "Сироп синупрет принимать 7 мл 3 раза в день.\n"
+                            "Капли синупрет принимать 50 капель 3 раза в день.\n")
+            img = open("sin.jpg", "rb")
+            bot.send_photo(
+                chat_id=message.chat.id,
+                photo=img,
+                caption="Таблетки Синупрет.Принимать по 2 таблетки 3 раза в день.Запивать большим количеством воды.\n")
+            img.close()
 
         elif message.text=="Простуда":
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
