@@ -1,59 +1,86 @@
 import telebot
 from telebot import types
 
+
 token="5006043369:AAFq08txl0nrBgJMNNlYtzBlD5LZ05859Sk"
 bot=telebot.TeleBot(token)
 
-def create_keyboard():
-    keyboard=types.InlineKeyboardMarkup()
-    prostuda_btn=types.InlineKeyboardButton(text="Простуда",callback_data="1")
-    nos_btn=types.InlineKeyboardButton(text="Заложен нос",callback_data="2")
-    yho=types.InlineKeyboardButton(text="Болит ухо", callback_data="3")
-    gorlo= types.InlineKeyboardButton(text="Болит горло", callback_data="4")
-    kashel= types.InlineKeyboardButton(text="Кашель", callback_data="5")
-    diareya= types.InlineKeyboardButton(text="Заболевания желудочно-кишечного тракта", callback_data="6")
-    high_ad= types.InlineKeyboardButton(text="Высокое артериальное давление", callback_data="7")
-    pain= types.InlineKeyboardButton(text="Головная,мышечная,зубная боль", callback_data="8")
-    keyboard.add(prostuda_btn)
-    keyboard.add(nos_btn)
-    keyboard.add(yho)
-    keyboard.add(gorlo)
-    keyboard.add(kashel)
-    keyboard.add(diareya)
-    keyboard.add(high_ad)
-    keyboard.add(pain)
-    return keyboard
+
 @bot.message_handler(commands=["start"])
-def start_bot(message):
-    keyboard=create_keyboard()
-    bot.send_message(
-        message.chat.id,
-        "Добрый день!Выберите,что вас беспокоит",
-        reply_markup=keyboard
-    )
-@bot.callback_query_handler(func=lambda call:True)
-def callback_inline(call):
-    keyboard=create_keyboard()
-    if call.message:
-        if call.data=="1":
-            img=open("orvi.jpg","rb")
-            bot.send_photo(
-                chat_id=call.message.chat.id,
-                photo=img,
-                caption="Картинка орвиколд",
-                reply_markup=keyboard)
-            img.close()
+def start(message):
+    markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
+    nos_btn=types.KeyboardButton("Заложен нос")
+    prostuda_btn=types.KeyboardButton("Простуда")
+    yho_btn=types.KeyboardButton("Болит ухо")
+    gorlo_btn=types.KeyboardButton("Болит горло")
+    kashel_btn= types.KeyboardButton("Кашель")
+    diareya_btn=types.KeyboardButton("Заболевания желудочно-кишечного тракта")
+    high_ad_btn= types.KeyboardButton("Высокое артериальное давление")
+    pain_btn = types.KeyboardButton("Головная,мышечная,зубная боль")
 
-        if call.data == "2":
-            img = open("sin.jpg", "rb")
-            bot.send_photo(
-                chat_id=call.message.chat.id,
-                photo=img,
-                caption="Картинка синупрет",
-                reply_markup=keyboard)
-            img.close()
+    markup.add(nos_btn,prostuda_btn, yho_btn, gorlo_btn, kashel_btn, diareya_btn, high_ad_btn, pain_btn)
+
+    bot.send_message(message.chat.id, "Привет, {0.first_name}!".format(message.from_user), reply_markup=markup)
 
 
+@bot.message_handler(content_types=["text"])
+def bot_message(message):
+    if message.chat.type == "private":
+        if message.text == "Заложен нос":
+            bot.send_message(message.chat.id, "ПРОМЫВАЙТЕ НОС \n"
+                                              "Для этого вы можете использовать:\n"
+            "На основе морской воды:\n"
+            "1)Аквамарис\n"
+            "2)Аквалор\n"
+            "3)Квикс\n"
+            "4)Humer\n"
+            "На основе физиологического раствора:\n"
+            "1)Аквасол \n"
+            "2)Ринолюкс\n"
+            "3)Салин\n"
+            "По три впрыскивания 2-3 раза в день в каждый носовой ход\n" 
+                             
+            "Сосудосуживающие капли:\n"
+            "Действуют до 8 часов:\n"
+            "1)Снуп(Германия)\n"
+            "2)Галазолин Комби(Польша)-увлажняет слизистую благодаря наличию декспантенола\n"
+            "3)Отривин(Швейцария)\n"
+            "4)Ринол(РБ)\n"
+            "5)Ксиназол(РБ)\n"
+            "6)Ксилин(РБ)\n"
+            "7)Ринол(РБ)\n"
+            "8)Рино Марис(в комбинации с морской водой)(Хорватия)\n"
+                                              "Действуют до 10-12 часов:\n"
+                                              "1)Назол(Италия)\n"
+                                              "2)Нозакар(Палестина)\n"
+                                              "3)Ноксивин(РБ)\n"
+                                              "4)Рузана(РБ)\n"
+            "__По 1 впрыскиванию 2 раза в сутки.Пользоваться не более 7 дней__")
 
-if __name__=="__main__":
-    bot.polling(none_stop=True)
+        elif message.text=="Простуда":
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            prot_vir = types.KeyboardButton("Противовирусные лекарственные средства")
+            simptom = types.KeyboardButton("Порошки для снятия симптомов")
+            back = types.KeyboardButton("Назад")
+            markup.add(prot_vir, simptom, back)
+
+            bot.send_message(message.chat.id,"Простуда", reply_markup=markup)
+
+
+        elif message.text == "Назад":
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            nos_btn = types.KeyboardButton("Заложен нос")
+            prostuda_btn = types.KeyboardButton("Простуда")
+            yho_btn = types.KeyboardButton("Болит ухо")
+            gorlo_btn = types.KeyboardButton("Болит горло")
+            kashel_btn = types.KeyboardButton("Кашель")
+            diareya_btn = types.KeyboardButton("Заболевания желудочно-кишечного тракта")
+            high_ad_btn = types.KeyboardButton("Высокое артериальное давление")
+            pain_btn = types.KeyboardButton("Головная,мышечная,зубная боль")
+
+            markup.add(nos_btn, prostuda_btn, yho_btn, gorlo_btn, kashel_btn, diareya_btn, high_ad_btn, pain_btn)
+
+            bot.send_message(message.chat.id, "Назад", reply_markup=markup)
+
+
+bot.polling(none_stop=True)
