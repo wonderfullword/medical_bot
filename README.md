@@ -11,8 +11,7 @@ The project is written in pycharm with telebot import.
 
 Press /start   to start this project
 
-
-![alt text](1.png)
-![alt text](2.png)
-![alt text](3.png)
-![alt text](4.png)
+![Image alt](https://github.com/wonderfullword/medical_bot/blob/master/picture/1.png)
+![Image alt](https://github.com/wonderfullword/medical_bot/blob/master/picture/2.png)
+![Image alt](https://github.com/wonderfullword/medical_bot/blob/master/picture/3.png)
+![Image alt](https://github.com/wonderfullword/medical_bot/blob/master/picture/4.png)
