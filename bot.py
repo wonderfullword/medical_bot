@@ -49,7 +49,7 @@ def bot_message(message):
                                               "На основе физиологического раствора:\n"
                                               "1)Салин(Германия).Аналоги:Аквасол(РБ),Ринолюкс(РБ)\n"
                                               "По три впрыскивания 2-3 раза в день в каждый носовой ход\n")
-            img = open("kviks-akvamaris.jpg", "rb")
+            img = open("picture/kviks-akvamaris.jpg", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -64,7 +64,7 @@ def bot_message(message):
                                               "1)Назол(Италия).Аналоги:Нозакар(Палестина),Ноксивин(РБ),Рузана(РБ)\n"
 
                                               "По 1 впрыскиванию 2 раза в сутки.Пользоваться не более 7 дней")
-            img = open("nasol.jpg", "rb")
+            img = open("picture/nasol.jpg", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -76,7 +76,7 @@ def bot_message(message):
                              "Таблетки синупрет форте(или экстракт).Принимать по 1 таблетке 3 раза в день.\n"
                              "Сироп синупрет принимать 7 мл 3 раза в день.\n"
                              "Капли синупрет принимать 50 капель 3 раза в день.\n")
-            img = open("sin.jpg", "rb")
+            img = open("picture/sin.jpg", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -102,7 +102,7 @@ def bot_message(message):
                                               "5)Амизон макс(Украина) с 18 лет.Принимать по 1 капсуле 3 раза в день.Противопоказание-заболевание щитовидной железы.\n"
                                               "6)Полиоксидоний(Россия) с 12 лет.Иммуномодулятор.Комплексная терапия ОРВИ.\n"
                                               "Принимать по 1 таблетке 1-3 раза в день в течение 10 дней за 30 минут до еды.\n")
-            img = open("tam.jpg.", "rb")
+            img = open("picture/tam.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -117,7 +117,7 @@ def bot_message(message):
                              "3)Гриппостад С(Германия)(с 15 лет)Ангримакс(РБ).Принимать по 2 капсулы 3 раза в день.\n"
                              "4)Ринзип(РБ) (с 15 лет)1 таблетка 3 раза в сутки.Принимать не более 5 дней")
 
-            img = open("ter.jpg.", "rb")
+            img = open("picture/ter.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -131,7 +131,7 @@ def bot_message(message):
                              "Перед применением согреть в ладонях.Применять не более 10 дней.\n"
                              "2)Анауран(Италия)-антибиотик с обезболивающим.При остром отите закапывать по 4 капли 3 раза в день\n")
 
-            img = open("otipax.jpg.", "rb")
+            img = open("picture/otipax.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -154,7 +154,7 @@ def bot_message(message):
                              "3)Лорсепт(РБ)(с 6 лет).Антисептическое действие.Рассасывать по 1 таблетке каждые 3 часа.\n"
                              "Боль в горле:1)Граммидин Нео с анестетиком(Россия)(с 6 лет).В составе антибиотик местного действия.По 1 таблетке 3 раза в день не более 7 дней.\n"
                              "2)Септолете Тотал(Словения)(с 6 лет)Антисептическое  и анальгезирующее действие.Рассасывать по 1 таблетке каждые 3 часа.\n")
-            img = open("grammidin.jpg.", "rb")
+            img = open("picture/grammidin.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -166,7 +166,7 @@ def bot_message(message):
                              "1)Орасепт(Щвейцария)Аналоги: Оросептин(РБ)(С 3 лет).Антисептическое действие.По 2 орошения 4 раза в день.\n"
                              "2)Гексаспрей(Франция)( с 6 лет).По 2 орошения 3 раза в день.\n"
                              "3)Септолете плюс(Словения)(с 12 лет).По 2 орошения 3 раза в день.\n")
-            img = open("hexasprey.jpg.", "rb")
+            img = open("picture/hexasprey.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -196,7 +196,7 @@ def bot_message(message):
                              "3)Гербапект(Польша) растительный состав.По 5 мл 3 раза в день.\n"
                              "Если мокрота отходит очень тяжело:\n"
                              "Флюдитек 5% (Франция)(с 15 лет).По 15 мл 3 раза в день, желательно за 1 час до еды или через 2 часа после еды.")
-            img = open("lazolvsn.jpg.", "rb")
+            img = open("picture/lazolvsn.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -208,7 +208,7 @@ def bot_message(message):
                              "Лазолван(Франция)(с 6 лет)Аналоги:Халиксол(Германия),Абровикс(РБ),Флавамед(Германия).По 1 таблетке 3 раза в день.\n"
                              "Пастилки для рассасывания:Гербион  плющ(Словения)( с 6 лет).По 1 пастилке 3 раза в день.\n"
                              "Если мокрота отходит очень тяжело:АЦЦ ЛОНГ(с 12 лет).По 1 шипучей таблетке 1 раз в день")
-            img = open("ambro.jpg.", "rb")
+            img = open("picture/ambro.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -221,7 +221,7 @@ def bot_message(message):
                              "1)Гербион с исландским мхом(Словения)(с 12 лет).По 15 мл 4 раза в сутки.\n"
                              "Пастилки для рассасывания:Исла-минт,Исла-моос(Германия)(с 6 лет).По 1 пастилке 3 раза в сутки.\n")
 
-            img = open("ger.jpg.", "rb")
+            img = open("picture/ger.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -243,7 +243,7 @@ def bot_message(message):
                              "Принимать 2 капсулы, затем по 1 капсуле  после каждого акта дефекации.\n"
                              "3)Стопдиар(Польша)Аналоги:Нифуроксазид(РБ).По 2 таблетки по 100 мг 4 раза/сут.\n")
 
-            img = open("smecta.jpg.", "rb")
+            img = open("picture/smecta.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -254,7 +254,7 @@ def bot_message(message):
             bot.send_message(message.chat.id,
                              "1)Дюфалак(Нидерланды)(с рождения)Аналоги:Лактулоза(РБ).Принимать по 15 мл 3 раза в день.")
 
-            img = open("dufalak.jpg.", "rb")
+            img = open("picture/dufalak.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -265,7 +265,7 @@ def bot_message(message):
             bot.send_message(message.chat.id,
                              "1)Блокордил 25 мг принимать под язык.Аналоги:Каптоприл(РБ).При необходимости принять вторую таблетку.\n")
 
-            img = open("blocordil.jpg.", "rb")
+            img = open("picture/blocordil.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
@@ -279,7 +279,7 @@ def bot_message(message):
                              "3)Аэртал(Венгрия(с 18 лет)\n"
                              "4)Вольтарен(Швейцария)(с 12 лет)Аналоги:Диклофенак(РБ).Принимать не более 3 таблеток в день.Не более 5 дней")
 
-            img = open("ketorol.jpg.", "rb")
+            img = open("picture/ketorol.jpg.", "rb")
             bot.send_photo(
                 chat_id=message.chat.id,
                 photo=img,
